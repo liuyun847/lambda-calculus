@@ -1,0 +1,11 @@
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# 解析器里 `case X: return ...` 的单行写法是有意的紧凑风格，保留
+ignore = ["E701"]
+
+[tool.ruff.lint.per-file-ignores]
+# lbd.py 用 Python 原生 lambda 做对照演示，lambda 赋值（E731）是有意为之
+"lbd.py" = ["E731"]
